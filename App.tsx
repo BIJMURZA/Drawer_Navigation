@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, View } from 'react-native';
+import { Button, View, Text } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -7,17 +7,17 @@ function HomeScreen({ navigation }) {
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Button
-                onPress={() => navigation.navigate('Notifications')}
+                onPress={() => navigation.navigate('Resident_Evil_4')}
                 title="Go to notifications"
             />
         </View>
     );
 }
 
-function NotificationsScreen({ navigation }) {
+function NotificationsScreen() {
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Button onPress={() => navigation.goBack()} title="Go back home" />
+            <Text> RESIDENT EVIL 4 - КРУТАЯ ИГРА</Text>
         </View>
     );
 }
@@ -29,7 +29,7 @@ export default function App() {
         <NavigationContainer>
             <Drawer.Navigator initialRouteName="Home">
                 <Drawer.Screen name="Home" component={HomeScreen} />
-                <Drawer.Screen name="Notifications" component={NotificationsScreen} />
+                <Drawer.Screen name="Resident_Evil_4" component={NotificationsScreen} options={{drawerItemStyle: { display: 'none' }}}/>
             </Drawer.Navigator>
         </NavigationContainer>
     );
